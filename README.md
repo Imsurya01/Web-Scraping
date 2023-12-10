@@ -6,6 +6,8 @@ Phase 1: Keyword Scraping
 
 Search Suggestions: Utilize Selenium to extract relevant three-word keyword suggestions from the Google Play Store search bar.
 Link Generation: Generate unique app URLs based on each Suggested keyword.
+
+
 Phase 2: App Data Scraping
 
 Selenium Interaction: Use Selenium to open each generated URL in a browser window(HeadLess Mode).
