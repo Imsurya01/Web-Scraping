@@ -1,33 +1,53 @@
-# Web-Scraping
-Scraping Popular Apps data from Google play Store (Python + Selenium)
-This project involves scraping the Google Play Store for apps with 5 million or more installs. It utilizes two main phases:
+## Google Play Store Popular Apps Scraper
 
-Phase 1: Keyword Scraping
+This project utilizes Python and Selenium to scrape app data from the Google Play Store, focusing on all popular apps with **"App Name", "Rating","Reviews", "Downloads" and "App link"**.
 
-Search Suggestions: Utilize Selenium to extract relevant three-word keyword suggestions from the Google Play Store search bar.
-Link Generation: Generate unique app URLs based on each Suggested keyword.
+### Requirements
 
+* Python 3.6+
+* Selenium
+* ChromeDriver
+* BeautifulSoup4
 
-Phase 2: App Data Scraping
+### Installation
 
-Selenium Interaction: Use Selenium to open each generated URL in a browser window(HeadLess Mode).
-Data Extraction: Parse the HTML code of each app page to extract relevant data points, including:
+1. Install the required libraries:
 
-App name
-Number of installs
-Number of reviews
-Average rating
-App URL
-Data Validation: Filtered All the extracted app data, particularly focusing on "installs", "Review" and "Rating".
-Data Storage: Save the validated data for each app in a structured format, such as a CSV file (`shaprated).
-Overall Flow:
+```bash
+pip install selenium beautifulsoup4
+```
 
-Scrape search suggestions for three-word keywords.
-Generate unique app URLs based on the extracted keywords.
-For each URL:
-Open the app page using Selenium.
-Extract relevant data points from the page.
-Filtered the data, focusing on "installs", "Review" and "Rating".
-Save the validated data in a structured format.
-Export the final data as a CSV file.
-This approach leverages Selenium's automation capabilities to efficiently extract app data from Google Play Store, focusing specifically on apps exceeding the specified install threshold.
+2. Download the ChromeDriver corresponding to your Chrome version: [https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)
+
+### Usage
+
+1. Open a terminal and navigate to the project directory.
+2. Run the script: by Step wise 
+
+```bash
+python app_scraper.py
+```
+
+### Data Output
+
+The script generates a CSV file named `shaprated.csv` containing the following data for each scraped app:
+
+* App Name
+* Number of Installs
+* Number of Reviews
+* Average Rating
+* App URL
+
+### Structure
+
+* `app_scraper.py`: Main script for scraping and data extraction.
+* `utils.py`: Utility functions for Selenium interaction and data manipulation.
+* `chromedriver.exe`: ChromeDriver executable (download and configure path).
+* `README.md`: This file.
+
+### Notes
+
+* This script focuses on scraping apps with **three-word keyword searches**.
+* You can modify the script to customize the search criteria and extracted data points.
+* Consider implementing headless mode in Selenium for faster execution.
+* Be aware of Google's Terms of Service regarding scraping and act responsibly.
