@@ -25,7 +25,7 @@ def main():
     
 
     for i in data_into_list:
-        data_file = open("shaprated .csv", "a")
+        data_file = open("separated .csv", "a")
         try:
 
             scrp_sugg(i)
